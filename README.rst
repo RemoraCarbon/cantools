@@ -379,6 +379,10 @@ The menu at the bottom of the monitor shows the available commands.
 
 Contributing
 ============
+#. Use this repostiory for you local work:
+
+   .. code-block:: text
+   pip install git+https://github.com/RemoraCarbon/cantools.git
 
 #. Fork the repository.
 
