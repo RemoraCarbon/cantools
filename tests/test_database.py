@@ -3370,7 +3370,7 @@ class CanToolsDatabaseTest(unittest.TestCase):
 
         # Note: cantools database cannot support multiple multiplexer signal names, so SYM file names the multiplexer
         # signal after the multiplexer id (Hence, AAAA, not MultiplexerSig)
-        self.assertEqual(dumped_msg.signals[0].name, "AAAAA")
+        self.assertEqual(dumped_msg.signals[0].name, "AAAA")
         self.assertEqual(dumped_msg.signals[0].is_multiplexer, True)
         self.assertEqual(dumped_msg.signals[0].multiplexer_ids, None)
         self.assertEqual(dumped_msg.signals[1].name, "MultiplexedSig")
