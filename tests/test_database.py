@@ -3369,13 +3369,13 @@ class CanToolsDatabaseTest(unittest.TestCase):
         dumped_msg = dumped_db.get_message_by_frame_id(0x100)
 
         # Note: cantools database cannot support multiple multiplexer signal names, so SYM file names the multiplexer
-        # signal after the multiplexer id (Hence, 2A, not MultiplexerSig)
-        self.assertEqual(dumped_msg.signals[0].name, "2A")
+        # signal after the multiplexer id (Hence, AAAA, not MultiplexerSig)
+        self.assertEqual(dumped_msg.signals[0].name, "AAAAA")
         self.assertEqual(dumped_msg.signals[0].is_multiplexer, True)
         self.assertEqual(dumped_msg.signals[0].multiplexer_ids, None)
         self.assertEqual(dumped_msg.signals[1].name, "MultiplexedSig")
         self.assertEqual(dumped_msg.signals[1].is_multiplexer, False)
-        self.assertEqual(dumped_msg.signals[1].multiplexer_ids[0], 0x2a)
+        self.assertEqual(dumped_msg.signals[1].multiplexer_ids[0], 0xaaaa)
 
     def test_string_attribute_definition_dump(self):
         db = cantools.db.load_file('tests/files/dbc/test_multiplex_dump.dbc')
